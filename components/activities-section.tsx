@@ -3,81 +3,66 @@ import { Mountain, Wrench, MessagesSquare, BookOpenCheck } from "lucide-react"
 const activities = [
   {
     icon: Mountain,
-    title: "Viajes a Milla Milla y Viscachani",
+    title: "Viajes de campo a comunidades",
     description:
-      "Nos trasladamos a las comunidades para vivir su realidad, recorrer las parcelas y construir confianza con las familias productoras.",
+      "Nos trasladamos a Milla Milla, Viscachani y otras comunidades de Sica Sica y Patacamaya para vivir su realidad, recorrer las parcelas y construir confianza con las familias productoras.",
     image: "/activity-fieldtrip.jpg",
     alt: "Estudiantes recorriendo una comunidad rural del altiplano boliviano",
+    tag: "Viajes",
   },
   {
     icon: Wrench,
-    title: "Talleres prácticos",
+    title: "Talleres de capacitación",
     description:
-      "Bajo la metodología 'Aprender Haciendo', desarrollamos sesiones en campo donde el conocimiento se construye en conjunto.",
+      "Bajo el principio de 'Aprender Haciendo', desarrollamos sesiones prácticas en campo donde el conocimiento se construye en conjunto con los productores y sus familias.",
     image: "/activity-workshop.jpg",
     alt: "Taller agrícola práctico con productores y estudiantes",
+    tag: "Talleres",
   },
   {
     icon: MessagesSquare,
-    title: "Socialización con las comunidades",
+    title: "Socialización y acuerdos",
     description:
-      "Espacios de diálogo y devolución para validar resultados, escuchar inquietudes y co-diseñar las herramientas del proyecto.",
+      "Espacios de diálogo y devolución con autoridades locales y comunidades para validar resultados, escuchar inquietudes y co-diseñar las herramientas del proyecto.",
     image: "/activity-community.jpg",
     alt: "Reunión comunitaria entre familias productoras y estudiantes",
+    tag: "Comunidad",
   },
   {
     icon: BookOpenCheck,
     title: "Investigación aplicada",
     description:
-      "Levantamiento de datos, sistematización de saberes y revisión científica para sustentar cada decisión del modelo.",
-    image: null,
-    alt: "",
+      "Levantamiento de datos, sistematización de saberes y revisión científica para sustentar cada decisión metodológica del modelo multidisciplinario.",
+    image: "/activity-diagnosis.jpg",
+    alt: "Estudiantes haciendo trabajo de investigación en el campo",
+    tag: "Investigación",
   },
 ]
 
 export function ActivitiesSection() {
   return (
-    <section id="activities" className="border-t border-border/50 bg-background py-24 sm:py-32">
+    <section className="bg-background py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-              Actividades en Campo
-            </span>
-            <h2 className="mt-5 font-serif text-4xl font-semibold tracking-tight text-foreground text-balance sm:text-5xl">
-              Aprender haciendo, junto a las comunidades.
-            </h2>
-          </div>
-          <p className="max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Cada actividad refuerza el vínculo entre la academia y los productores de quinua del altiplano.
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2">
           {activities.map((a) => (
             <article
               key={a.title}
-              className="group flex flex-col overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border/60 transition hover:-translate-y-1 hover:shadow-md"
+              className="group relative flex flex-col overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border/60 transition hover:-translate-y-1 hover:shadow-md"
             >
-              {a.image ? (
-                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                  <img
-                    src={a.image || "/placeholder.svg"}
-                    alt={a.alt}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-              ) : (
-                <div className="relative flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-primary/10 via-accent/15 to-secondary/40">
-                  <a.icon className="h-12 w-12 text-primary/70" aria-hidden="true" />
-                </div>
-              )}
-              <div className="flex flex-1 flex-col gap-3 p-6">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <a.icon className="h-5 w-5" aria-hidden="true" />
+              <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                <img
+                  src={a.image || "/placeholder.svg"}
+                  alt={a.alt}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-background/85 px-3 py-1 text-xs font-semibold text-foreground backdrop-blur">
+                  <a.icon className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
+                  {a.tag}
                 </span>
-                <h3 className="text-lg font-semibold leading-snug text-foreground">{a.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{a.description}</p>
+              </div>
+              <div className="flex flex-1 flex-col gap-3 p-6 sm:p-7">
+                <h3 className="font-serif text-2xl font-semibold leading-snug text-foreground">{a.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">{a.description}</p>
               </div>
             </article>
           ))}

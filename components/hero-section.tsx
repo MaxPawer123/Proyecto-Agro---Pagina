@@ -1,9 +1,10 @@
+import Link from "next/link"
 import { ArrowDown, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
   return (
-    <section id="top" className="relative isolate overflow-hidden">
+    <section className="relative isolate overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         <img
@@ -12,16 +13,16 @@ export function HeroSection() {
           className="h-full w-full object-cover"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background"
+          className="absolute inset-0 bg-gradient-to-b from-background/65 via-background/40 to-background"
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-transparent"
           aria-hidden="true"
         />
       </div>
 
-      <div className="mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-center px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+      <div className="mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-center px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
         <div className="max-w-3xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur">
             <MapPin className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
@@ -29,11 +30,11 @@ export function HeroSection() {
           </div>
 
           <h1 className="font-serif text-5xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:text-6xl lg:text-7xl">
-            Innovación y <span className="text-primary">Tradición</span> para el Agro
+            Innovación Tecnológica y <span className="text-primary">Tradición Agrícola</span>
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Modelo Multidisciplinario de Desarrollo Comunitario Productivo en{" "}
+            Desarrollo Comunitario Productivo en el corazón de{" "}
             <span className="font-medium text-foreground">Sica Sica</span> y{" "}
             <span className="font-medium text-foreground">Patacamaya</span>. Una iniciativa universitaria que une
             ciencia, tecnología y conocimiento ancestral.
@@ -41,10 +42,10 @@ export function HeroSection() {
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Button asChild size="lg" className="rounded-full px-7 text-base shadow-md">
-              <a href="#about" className="inline-flex items-center gap-2">
-                Descubre el Proyecto
-                <ArrowDown className="h-4 w-4" aria-hidden="true" />
-              </a>
+              <Link href="/proyecto" className="inline-flex items-center gap-2">
+                Conoce el Proyecto
+                <ArrowDown className="h-4 w-4 -rotate-45" aria-hidden="true" />
+              </Link>
             </Button>
             <Button
               asChild
@@ -52,7 +53,7 @@ export function HeroSection() {
               variant="outline"
               className="rounded-full border-border/70 bg-background/70 px-7 text-base backdrop-blur"
             >
-              <a href="#products">Conoce Yapu Aroma</a>
+              <Link href="/productos">Conoce Yapu Aroma</Link>
             </Button>
           </div>
 

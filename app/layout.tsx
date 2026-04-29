@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { Plus_Jakarta_Sans, Fraunces } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { SiteNavbar } from "@/components/site-navbar"
+import { SiteFooter } from "@/components/site-footer"
 import "./globals.css"
 
 const jakarta = Plus_Jakarta_Sans({
@@ -45,8 +47,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${jakarta.variable} ${fraunces.variable} bg-background`}>
-      <body className="font-sans antialiased">
-        {children}
+      <body className="font-sans antialiased flex min-h-screen flex-col">
+        <SiteNavbar />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>

@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Sprout, Heart, GraduationCap, MapPin } from "lucide-react"
 
 export function SiteFooter() {
@@ -6,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-primary-foreground">
                 <Sprout className="h-5 w-5" aria-hidden="true" />
               </span>
@@ -14,7 +15,7 @@ export function SiteFooter() {
                 <p className="font-serif text-xl font-semibold">Yapu Aroma</p>
                 <p className="text-xs uppercase tracking-wider text-background/60">UMSA · Bolivia</p>
               </div>
-            </div>
+            </Link>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-background/70">
               Modelo Multidisciplinario de Desarrollo Comunitario Productivo, una iniciativa al servicio de las
               familias productoras de quinua del altiplano boliviano.
@@ -33,24 +34,29 @@ export function SiteFooter() {
               <h3 className="text-xs font-semibold uppercase tracking-wider text-background/60">Navegación</h3>
               <ul className="mt-4 space-y-3 text-sm">
                 <li>
-                  <a href="#about" className="text-background/85 transition-colors hover:text-accent">
+                  <Link href="/proyecto" className="text-background/85 transition-colors hover:text-accent">
                     El Proyecto
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#timeline" className="text-background/85 transition-colors hover:text-accent">
+                  <Link href="/historia" className="text-background/85 transition-colors hover:text-accent">
                     Historia
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#activities" className="text-background/85 transition-colors hover:text-accent">
+                  <Link href="/actividades" className="text-background/85 transition-colors hover:text-accent">
                     Actividades
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#products" className="text-background/85 transition-colors hover:text-accent">
+                  <Link href="/productos" className="text-background/85 transition-colors hover:text-accent">
                     Productos
-                  </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/quienes-somos" className="text-background/85 transition-colors hover:text-accent">
+                    Quiénes Somos
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -95,9 +101,7 @@ export function SiteFooter() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-background/15 pt-8 text-xs text-background/60 sm:flex-row sm:items-center">
           <p>© 2026 Yapu Aroma · Proyecto de Grado UMSA. Todos los derechos reservados.</p>
-          <p className="text-balance">
-            Hecho con dedicación para el agro boliviano.
-          </p>
+          <p className="text-balance">Hecho con dedicación para el agro boliviano.</p>
         </div>
       </div>
     </footer>

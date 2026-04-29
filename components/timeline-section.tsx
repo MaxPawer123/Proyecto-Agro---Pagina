@@ -4,79 +4,65 @@ const milestones = [
   {
     icon: Users,
     label: "Hito 01",
+    date: "Inicio del proyecto",
     title: "El Inicio: Primera Reunión Multidisciplinaria",
     description:
-      "Estudiantes de distintas carreras de la UMSA se encuentran para trazar un objetivo común: aportar al desarrollo de las comunidades productoras de quinua.",
+      "Estudiantes de distintas carreras de la UMSA se encuentran para trazar un objetivo común: aportar al desarrollo de las comunidades productoras de quinua. Se definen roles, responsabilidades y la metodología de trabajo conjunto.",
   },
   {
     icon: ClipboardList,
     label: "Hito 02",
+    date: "Trabajo de campo",
     title: "Diagnóstico en Terreno",
     description:
-      "Visitas a las comunidades para escuchar, observar y documentar las necesidades reales de las familias productoras y de su sistema productivo.",
+      "Levantamiento de datos, visitas a comunidades, entrevistas con autoridades y familias productoras. Se documentan necesidades reales del sistema productivo y se mapean oportunidades de intervención.",
   },
   {
     icon: Rocket,
     label: "Hito 03",
-    title: "Desarrollo y Ejecución",
+    date: "Implementación",
+    title: "Ejecución y Talleres",
     description:
-      "Implementación del modelo multidisciplinario: talleres, herramientas digitales y entregables al servicio de las comunidades.",
+      "Desarrollo de la app Yapu Aroma, talleres de capacitación con metodología 'aprender haciendo' y entrega de los documentos del modelo a las comunidades para garantizar continuidad.",
   },
 ]
 
 export function TimelineSection() {
   return (
-    <section id="timeline" className="border-t border-border/50 bg-muted/40 py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center rounded-full bg-accent/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-secondary-foreground">
-            Nuestra Historia
-          </span>
-          <h2 className="mt-5 font-serif text-4xl font-semibold tracking-tight text-foreground text-balance sm:text-5xl">
-            El camino que recorrimos juntos.
-          </h2>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Una línea de tiempo de los hitos que dieron forma a este proyecto.
-          </p>
-        </div>
-
-        {/* Desktop horizontal timeline */}
-        <ol className="relative mt-16 hidden gap-8 md:grid md:grid-cols-3">
+    <section className="bg-background py-20 sm:py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        {/* Vertical timeline */}
+        <ol className="relative space-y-10">
+          <div
+            className="absolute left-5 top-2 bottom-2 w-px bg-gradient-to-b from-primary via-border to-border"
+            aria-hidden="true"
+          />
           {milestones.map((m, i) => (
-            <li key={m.title} className="relative">
-              <div className="flex w-full items-center">
-                <span className="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-md ring-4 ring-background">
-                  <m.icon className="h-5 w-5" aria-hidden="true" />
-                </span>
-                {i < milestones.length - 1 && (
-                  <div
-                    className="ml-3 h-px flex-1 bg-gradient-to-r from-primary/40 to-border"
-                    aria-hidden="true"
-                  />
-                )}
-              </div>
-              <div className="mt-6 rounded-2xl bg-card p-6 shadow-sm ring-1 ring-border/60 transition hover:-translate-y-0.5 hover:shadow-md">
-                <p className="text-xs font-semibold uppercase tracking-wider text-primary">{m.label}</p>
-                <h3 className="mt-2 text-lg font-semibold leading-snug text-foreground">{m.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.description}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-
-        {/* Mobile vertical timeline */}
-        <ol className="relative mt-12 space-y-8 md:hidden">
-          <div className="absolute left-5 top-2 bottom-2 w-px bg-border" aria-hidden="true" />
-          {milestones.map((m) => (
-            <li key={m.title} className="relative pl-16">
-              <span className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-md ring-4 ring-muted/40">
-                <m.icon className="h-4 w-4" aria-hidden="true" />
+            <li key={m.title} className="relative pl-16 sm:pl-20">
+              <span className="absolute left-0 top-0 flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-md ring-4 ring-background">
+                <m.icon className="h-5 w-5" aria-hidden="true" />
               </span>
-              <div className="rounded-2xl bg-card p-5 shadow-sm ring-1 ring-border/60">
-                <p className="text-[11px] font-semibold uppercase tracking-wider text-primary">{m.label}</p>
-                <h3 className="mt-1.5 text-base font-semibold leading-snug text-foreground">{m.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.description}</p>
+              <div className="rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border/60 transition hover:-translate-y-0.5 hover:shadow-md sm:p-8">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary">
+                    {m.label}
+                  </span>
+                  <span className="text-xs font-medium text-muted-foreground">{m.date}</span>
+                </div>
+                <h3 className="mt-3 font-serif text-2xl font-semibold leading-snug text-foreground sm:text-3xl">
+                  {m.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{m.description}</p>
               </div>
+              {i === milestones.length - 1 && (
+                <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent/20 px-4 py-2 text-sm font-medium text-secondary-foreground">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+                  </span>
+                  Fase actual del proyecto
+                </div>
+              )}
             </li>
           ))}
         </ol>
