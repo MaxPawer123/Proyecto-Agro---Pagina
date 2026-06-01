@@ -100,7 +100,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-background/15 pt-8 text-xs text-background/60 sm:flex-row sm:items-center">
-          <p>© 2026 Yapu Aroma · Proyecto de Grado UMSA. Todos los derechos reservados.</p>
+          <p>© 2026 Yapu Aroma · Proyecto de Grado UMSA. Todos los derechos reservadosfdsfsdf.</p>
           <p className="text-balance">Hecho con dedicación para el agro boliviano.</p>
         </div>
       </div>
