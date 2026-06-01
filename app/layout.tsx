@@ -18,7 +18,7 @@ const fraunces = Fraunces({
 })
 
 export const metadata: Metadata = {
-  title: "Yapu Aroma | Modelo Multidisciplinario de Desarrollo Comunitario Productivo",
+  title: "Yapu Aroma | Modelo Multidisciplinario de Desarrollo Comunitario Productivo sdfdfsdf",
   description:
     "Proyecto universitario UMSA aplicado en las comunidades productoras de quinua de Sica Sica y Patacamaya, Bolivia. Innovación y tradición para el agro.",
   generator: "v0.app",
