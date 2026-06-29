@@ -51,16 +51,16 @@ export function SiteNavbar() {
         <Link href="/" className="flex items-center gap-2 group">
           <div className="flex h-9 w-auto items-center transition-transform group-hover:scale-105">
             <Image 
-              src="/logo-proyecto-institucion.png" 
-              alt="Logo Proyecto AgroConecta - UMSA" 
+              src="/logo-proyecto.png" 
+              alt="Logo Proyecto Agro" 
               width={36}
               height={36}
               className="h-9 w-auto"
             />
           </div>
           <span className="hidden flex-col leading-tight sm:flex">
-            <span className="text-sm font-bold tracking-tight text-primary">AgroConecta</span>
-            <span className="text-[10px] uppercase tracking-wider text-accent">UMSA · Bolivia</span>
+            <span className="text-sm font-bold tracking-tight text-foreground">Proyecto Agro</span>
+            <span className="text-[10px] uppercase tracking-wider text-muted-foreground">UMSA · Bolivia</span>
           </span>
         </Link>
 
