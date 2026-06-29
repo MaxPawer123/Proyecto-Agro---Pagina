@@ -1,31 +1,4 @@
-import { Users, ClipboardList, Rocket } from "lucide-react"
-
-const milestones = [
-  {
-    icon: Users,
-    label: "Hito 01",
-    date: "Inicio del proyecto",
-    title: "El Inicio: Primera Reunión Multidisciplinaria",
-    description:
-      "Estudiantes de distintas carreras de la UMSA se encuentran para trazar un objetivo común: aportar al desarrollo de las comunidades productoras de quinua. Se definen roles, responsabilidades y la metodología de trabajo conjunto.",
-  },
-  {
-    icon: ClipboardList,
-    label: "Hito 02",
-    date: "Trabajo de campo",
-    title: "Diagnóstico en Terreno",
-    description:
-      "Levantamiento de datos, visitas a comunidades, entrevistas con autoridades y familias productoras. Se documentan necesidades reales del sistema productivo y se mapean oportunidades de intervención.",
-  },
-  {
-    icon: Rocket,
-    label: "Hito 03",
-    date: "Implementación",
-    title: "Ejecución y Talleres",
-    description:
-      "Desarrollo de la app Yapu Aroma, talleres de capacitación con metodología 'aprender haciendo' y entrega de los documentos del modelo a las comunidades para garantizar continuidad.",
-  },
-]
+import { milestones } from "@/lib/milestones-data"
 
 export function TimelineSection() {
   return (
