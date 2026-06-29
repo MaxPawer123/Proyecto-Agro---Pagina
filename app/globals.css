@@ -4,43 +4,43 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Tonos tierra (cafés suaves), verdes agrícolas y acentos cálidos (quinua) */
-  --background: oklch(0.98 0.012 85);
-  --foreground: oklch(0.22 0.02 60);
+  /* Paleta Institucional: Azul Petróleo, Verde Lima, Crema */
+  --background: #f9f6f0;
+  --foreground: #003d4c;
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.02 60);
+  --card: #ffffff;
+  --card-foreground: #003d4c;
 
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.02 60);
+  --popover: #ffffff;
+  --popover-foreground: #003d4c;
 
-  /* Verde agrícola profundo */
-  --primary: oklch(0.42 0.08 145);
-  --primary-foreground: oklch(0.98 0.012 85);
+  /* Primario: Azul Petróleo */
+  --primary: #003d4c;
+  --primary-foreground: #f9f6f0;
 
-  /* Café tierra suave */
-  --secondary: oklch(0.92 0.02 70);
-  --secondary-foreground: oklch(0.32 0.05 60);
+  /* Secundario: Café suave */
+  --secondary: #f5f1eb;
+  --secondary-foreground: #003d4c;
 
-  --muted: oklch(0.95 0.015 80);
-  --muted-foreground: oklch(0.48 0.03 60);
+  --muted: #e8e3da;
+  --muted-foreground: #6b6b6b;
 
-  /* Acento cálido - dorado quinua */
-  --accent: oklch(0.74 0.14 75);
-  --accent-foreground: oklch(0.22 0.02 60);
+  /* Acento: Verde Lima/Oliva */
+  --accent: #a2be00;
+  --accent-foreground: #003d4c;
 
-  --destructive: oklch(0.55 0.2 27);
-  --destructive-foreground: oklch(0.98 0.012 85);
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
 
-  --border: oklch(0.9 0.015 75);
-  --input: oklch(0.9 0.015 75);
-  --ring: oklch(0.42 0.08 145);
+  --border: #e8e3da;
+  --input: #e8e3da;
+  --ring: #a2be00;
 
-  --chart-1: oklch(0.42 0.08 145);
-  --chart-2: oklch(0.74 0.14 75);
-  --chart-3: oklch(0.45 0.07 60);
-  --chart-4: oklch(0.62 0.1 130);
-  --chart-5: oklch(0.55 0.12 50);
+  --chart-1: #003d4c;
+  --chart-2: #a2be00;
+  --chart-3: #6b9e00;
+  --chart-4: #1a5f6b;
+  --chart-5: #d4a574;
 
   --radius: 0.875rem;
 
@@ -55,39 +55,39 @@
 }
 
 .dark {
-  --background: oklch(0.18 0.015 60);
-  --foreground: oklch(0.96 0.012 85);
+  --background: #1a1a1a;
+  --foreground: #f9f6f0;
 
-  --card: oklch(0.22 0.02 60);
-  --card-foreground: oklch(0.96 0.012 85);
+  --card: #2a2a2a;
+  --card-foreground: #f9f6f0;
 
-  --popover: oklch(0.22 0.02 60);
-  --popover-foreground: oklch(0.96 0.012 85);
+  --popover: #2a2a2a;
+  --popover-foreground: #f9f6f0;
 
-  --primary: oklch(0.62 0.12 145);
-  --primary-foreground: oklch(0.18 0.015 60);
+  --primary: #003d4c;
+  --primary-foreground: #f9f6f0;
 
-  --secondary: oklch(0.3 0.025 60);
-  --secondary-foreground: oklch(0.96 0.012 85);
+  --secondary: #2a2a2a;
+  --secondary-foreground: #f9f6f0;
 
-  --muted: oklch(0.28 0.02 60);
-  --muted-foreground: oklch(0.7 0.02 75);
+  --muted: #3a3a3a;
+  --muted-foreground: #b0b0b0;
 
-  --accent: oklch(0.74 0.14 75);
-  --accent-foreground: oklch(0.18 0.015 60);
+  --accent: #a2be00;
+  --accent-foreground: #003d4c;
 
-  --destructive: oklch(0.4 0.14 25);
-  --destructive-foreground: oklch(0.96 0.012 85);
+  --destructive: #ef4444;
+  --destructive-foreground: #1a1a1a;
 
-  --border: oklch(0.3 0.025 60);
-  --input: oklch(0.3 0.025 60);
-  --ring: oklch(0.62 0.12 145);
+  --border: #3a3a3a;
+  --input: #3a3a3a;
+  --ring: #a2be00;
 
-  --chart-1: oklch(0.62 0.12 145);
-  --chart-2: oklch(0.74 0.14 75);
-  --chart-3: oklch(0.55 0.08 60);
-  --chart-4: oklch(0.7 0.11 130);
-  --chart-5: oklch(0.65 0.13 50);
+  --chart-1: #a2be00;
+  --chart-2: #70b900;
+  --chart-3: #1a5f6b;
+  --chart-4: #003d4c;
+  --chart-5: #d4a574;
 
   --sidebar: oklch(0.18 0.015 60);
   --sidebar-foreground: oklch(0.96 0.012 85);
