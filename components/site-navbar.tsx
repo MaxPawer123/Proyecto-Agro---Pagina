@@ -3,7 +3,8 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
-import { Menu, X, Sprout } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -48,11 +49,17 @@ export function SiteNavbar() {
         aria-label="Navegación principal"
       >
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm transition-transform group-hover:scale-105">
-            <Sprout className="h-5 w-5" aria-hidden="true" />
-          </span>
-          <span className="flex flex-col leading-tight">
-            <span className="text-sm font-bold tracking-tight text-foreground">Yapu Aroma</span>
+          <div className="flex h-9 w-auto items-center transition-transform group-hover:scale-105">
+            <Image 
+              src="/logo-proyecto.png" 
+              alt="Logo Proyecto Agro" 
+              width={36}
+              height={36}
+              className="h-9 w-auto"
+            />
+          </div>
+          <span className="hidden flex-col leading-tight sm:flex">
+            <span className="text-sm font-bold tracking-tight text-foreground">Proyecto Agro</span>
             <span className="text-[10px] uppercase tracking-wider text-muted-foreground">UMSA · Bolivia</span>
           </span>
         </Link>
