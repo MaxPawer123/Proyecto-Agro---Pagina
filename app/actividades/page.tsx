@@ -3,9 +3,9 @@ import { PageHeader } from "@/components/page-header"
 import { ActivitiesSection } from "@/components/activities-section"
 
 export const metadata: Metadata = {
-  title: "Actividades | Yapu Aroma",
+  title: "Actividades | Proyecto Agro UMSA",
   description:
-    "Galería de actividades en campo: viajes a Milla Milla y Viscachani, talleres de capacitación bajo el principio de aprender haciendo, y socialización con autoridades locales.",
+    "Galería interactiva de 21 actividades en campo: viajes a comunidades, talleres de capacitación bajo el principio de aprender haciendo, investigación participativa y socialización comunitaria.",
 }
 
 export default function ActividadesPage() {
