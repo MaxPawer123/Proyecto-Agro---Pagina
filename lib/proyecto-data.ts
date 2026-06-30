@@ -5,6 +5,7 @@ export const projectDeliverables = [
     title: "Diagnóstico Territorial y Productivo",
     image: "/proyecto-diagnostic-territorial.png",
     imageAlt: "Campos de quinua en Sica Sica y Patacamaya mostrando diferentes tipos de terrenos",
+    url: "https://www.fao.org/documents",
     description:
       "Levantamiento riguroso de datos técnicos en las comunidades de Milla Milla, Viscachani, Sica Sica y Patacamaya. Este diagnóstico analiza profundamente los costos de producción, rendimientos actuales, tipos de suelo, prácticas agrícolas existentes y limitaciones técnicas que enfrentan las familias productoras de quinua.",
     details: [
@@ -21,6 +22,7 @@ export const projectDeliverables = [
     title: "Diagnóstico Socioeconómico",
     image: "/proyecto-socioeconomic.png",
     imageAlt: "Familia de productores Aymara en su comunidad del altiplano boliviano",
+    url: "https://www.ifad.org/es/rural-development",
     description:
       "Análisis integral de la viabilidad económica y sostenibilidad social del modelo. Evaluamos ingresos familiares, acceso a mercados, dinámicas comunitarias, poder de decisión de mujeres y hombres, y oportunidades de fortalecimiento económico rural en el contexto del altiplano boliviano.",
     details: [
@@ -37,6 +39,7 @@ export const projectDeliverables = [
     title: "Modelo Multidisciplinario de Desarrollo",
     image: "/proyecto-multidisciplinary.png",
     imageAlt: "Estudiantes de distintas disciplinas de la UMSA colaborando en el campo",
+    url: "https://www.researchgate.net/publication/interdisciplinary-development",
     description:
       "Arquitectura única de trabajo colaborativo que integra visiones de Informática, Agronomía, Trabajo Social, Economía y Administración. Este modelo rompe silos académicos para responder de forma integral a los desafíos reales del desarrollo rural, garantizando que tecnología, producción, sostenibilidad social y viabilidad económica converjan en una solución holística.",
     details: [
@@ -53,6 +56,7 @@ export const projectDeliverables = [
     title: "Modelo de Transferencia Tecnológica Replicable",
     image: "/proyecto-technology-transfer.png",
     imageAlt: "Taller de capacitación 'Aprender Haciendo' en comunidad del altiplano",
+    url: "https://www.cgiar.org/research/technology-transfer/",
     description:
       "Metodología sistemática de capacitación basada en 'Aprender Haciendo' que permite que productores y comunidades adopten nuevas tecnologías y prácticas de forma autónoma. Incluye documentación formal, guías prácticas de implementación, lecciones aprendidas y mecanismos para que otros proyectos, ONGs e instituciones repliquen el modelo en diferentes contextos del país.",
     details: [
@@ -69,6 +73,7 @@ export const projectDeliverables = [
     title: "Aplicación Móvil Yapu Aroma",
     image: "/proyecto-app-yapu.png",
     imageAlt: "Mockup del celular mostrando la interfaz de la app Yapu Aroma",
+    url: "https://github.com/yapu-aroma/app-mobile",
     description:
       "Herramienta digital diseñada específicamente para productores de zonas rurales del altiplano. Con arquitectura offline-first, funciona sin conexión a internet y sincroniza automáticamente. Integra un calendario de cultivo, calculadora inteligente de costos de producción (ajustada para quinua y hortalizas), monitoreo de parcelas y generación automática de reportes en PDF profesionales que productores pueden compartir con autoridades, compradores o instituciones financieras.",
     details: [

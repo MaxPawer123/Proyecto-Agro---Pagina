@@ -2,8 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Building2, X, CheckCircle2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { X, CheckCircle2, Facebook, Linkedin, Music2, Phone } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { coordinators, teamAreas } from "@/lib/team-data"
 import { cn } from "@/lib/utils"
@@ -14,42 +13,91 @@ export function TeamSection() {
 
   const displayAreas = selectedArea ? teamAreas.filter((a) => a.id === selectedArea) : teamAreas
 
+  const getSocialIcon = (platform: string) => {
+    switch (platform) {
+      case "facebook":
+        return <Facebook className="h-4 w-4" />
+      case "tiktok":
+        return <Music2 className="h-4 w-4" />
+      case "linkedin":
+        return <Linkedin className="h-4 w-4" />
+      case "whatsapp":
+        return <Phone className="h-4 w-4" />
+      default:
+        return null
+    }
+  }
+
+  const getSocialColor = (platform: string) => {
+    switch (platform) {
+      case "facebook":
+        return "hover:bg-blue-50 hover:text-blue-600"
+      case "tiktok":
+        return "hover:bg-black/5 hover:text-black"
+      case "linkedin":
+        return "hover:bg-blue-100 hover:text-blue-700"
+      case "whatsapp":
+        return "hover:bg-green-50 hover:text-green-600"
+      default:
+        return ""
+    }
+  }
+
   return (
     <section className="bg-background py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        {/* UMSA card */}
-        <div className="mb-12 overflow-hidden rounded-3xl bg-secondary p-7 ring-1 ring-border/60 sm:p-9">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-start gap-4">
-              <span className="flex h-14 w-14 flex-none items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm">
-                <Building2 className="h-6 w-6" aria-hidden="true" />
-              </span>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-primary">Nuestra Casa de Estudios</p>
-                <h2 className="mt-2 font-serif text-2xl font-semibold leading-tight tracking-tight text-secondary-foreground sm:text-3xl">
-                  Universidad Mayor de San Andrés
-                </h2>
-                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-secondary-foreground/85 sm:text-base">
-                  Somos estudiantes de distintas facultades de la UMSA que decidimos cruzar fronteras académicas
-                  para responder a un desafío real con todas las miradas posibles.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <span className="rounded-full bg-background px-4 py-2 text-sm font-medium text-foreground ring-1 ring-border/60">
-                La Paz
-              </span>
-              <span className="rounded-full bg-background px-4 py-2 text-sm font-medium text-foreground ring-1 ring-border/60">
-                Bolivia
-              </span>
-              <span className="rounded-full bg-background px-4 py-2 text-sm font-medium text-foreground ring-1 ring-border/60">
-                2026
-              </span>
-            </div>
+        {/* Carreras que integran el equipo - FIRST */}
+        <div className="mb-16">
+          <h2 className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            Carreras que integran el equipo
+          </h2>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
+            La fuerza del modelo está en mirar el mismo problema desde ángulos distintos.
+          </p>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {teamAreas.map((area) => (
+              <button
+                key={area.id}
+                onClick={() => setSelectedArea(selectedArea === area.id ? null : area.id)}
+                className={cn(
+                  "group rounded-2xl p-6 ring-1 transition hover:-translate-y-0.5 hover:shadow-md text-left",
+                  selectedArea === area.id
+                    ? "bg-[#003d4c] text-white ring-[#003d4c] shadow-md"
+                    : "bg-card ring-border/60",
+                )}
+              >
+                <div className="flex items-start gap-4">
+                  <span
+                    className={cn(
+                      "flex h-11 w-11 flex-none items-center justify-center rounded-xl transition-colors",
+                      selectedArea === area.id
+                        ? "bg-white/20 text-white"
+                        : "bg-[#a2be00]/10 text-[#a2be00] group-hover:bg-[#a2be00] group-hover:text-white",
+                    )}
+                  >
+                    <area.icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <div>
+                    <h3 className={cn("text-base font-semibold", selectedArea === area.id ? "text-white" : "text-foreground")}>
+                      {area.name}
+                    </h3>
+                    <p
+                      className={cn(
+                        "mt-1.5 text-sm leading-relaxed",
+                        selectedArea === area.id ? "text-white/90" : "text-muted-foreground",
+                      )}
+                    >
+                      {area.description}
+                    </p>
+                  </div>
+                </div>
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Coordinators Section */}
+        {/* Coordinadores - SECOND */}
         <div className="mb-16">
           <h3 className="font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
             Coordinadores
@@ -74,75 +122,44 @@ export function TeamSection() {
                   />
                 </div>
                 <h4 className="mt-4 font-semibold text-foreground">{member.name}</h4>
-                <p className="text-sm font-medium text-primary">{member.role}</p>
+                <p className="text-sm font-medium text-[#003d4c]">{member.role}</p>
                 <p className="text-xs text-muted-foreground">{member.department}</p>
-              </button>
-            ))}
-          </div>
-        </div>
 
-        {/* Discipline grid */}
-        <div>
-          <h3 className="font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-            Carreras que integran el equipo
-          </h3>
-          <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            La fuerza del modelo está en mirar el mismo problema desde ángulos distintos.
-          </p>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {teamAreas.map((area) => (
-              <button
-                key={area.id}
-                onClick={() => setSelectedArea(selectedArea === area.id ? null : area.id)}
-                className={cn(
-                  "group rounded-2xl p-6 ring-1 transition hover:-translate-y-0.5 hover:shadow-md text-left",
-                  selectedArea === area.id
-                    ? "bg-primary text-primary-foreground ring-primary shadow-md"
-                    : "bg-card ring-border/60",
-                )}
-              >
-                <div className="flex items-start gap-4">
-                  <span
-                    className={cn(
-                      "flex h-11 w-11 flex-none items-center justify-center rounded-xl transition-colors",
-                      selectedArea === area.id ? "bg-primary-foreground/20" : "bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground",
-                      selectedArea === area.id ? "text-primary-foreground" : "text-primary",
-                    )}
-                  >
-                    <area.icon className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <div>
-                    <h4 className={cn("text-base font-semibold", selectedArea === area.id ? "text-primary-foreground" : "text-foreground")}>
-                      {area.name}
-                    </h4>
-                    <p
+                {/* Social Links Row */}
+                <div className="mt-4 flex gap-2 pt-3 border-t border-border/40">
+                  {member.socials?.map((social) => (
+                    <a
+                      key={social.platform}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={cn(
-                        "mt-1.5 text-sm leading-relaxed",
-                        selectedArea === area.id ? "text-primary-foreground/90" : "text-muted-foreground",
+                        "inline-flex items-center justify-center h-8 w-8 rounded-lg text-[#003d4c] transition-colors",
+                        getSocialColor(social.platform),
                       )}
+                      aria-label={social.platform}
                     >
-                      {area.description}
-                    </p>
-                  </div>
+                      {getSocialIcon(social.platform)}
+                    </a>
+                  ))}
                 </div>
               </button>
             ))}
           </div>
         </div>
 
-        {/* Team Members Grid */}
+        {/* Team Members Grid - THIRD */}
         {displayAreas.map((area) => (
           <div key={area.id} className="mt-12">
             <h4 className="mb-6 font-serif text-xl font-semibold text-foreground">Integrantes de {area.name}</h4>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {area.members.map((member) => (
-              <button
-                key={member.id}
-                onClick={() => setSelectedMember(member)}
-                className="group relative flex flex-col overflow-hidden rounded-2xl bg-card p-6 ring-1 ring-border/60 shadow-sm transition hover:-translate-y-1 hover:shadow-md text-left"
-              >
-                  <div className="relative h-32 w-32 overflow-hidden rounded-xl bg-primary/10">
+                <button
+                  key={member.id}
+                  onClick={() => setSelectedMember(member)}
+                  className="group relative flex flex-col overflow-hidden rounded-2xl bg-card p-6 ring-1 ring-border/60 shadow-sm transition hover:-translate-y-1 hover:shadow-md text-left"
+                >
+                  <div className="relative h-32 w-32 overflow-hidden rounded-xl bg-[#a2be00]/10">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -151,9 +168,28 @@ export function TeamSection() {
                     />
                   </div>
                   <h4 className="mt-4 font-semibold text-foreground">{member.name}</h4>
-                  <p className="text-sm font-medium text-primary">{member.role}</p>
+                  <p className="text-sm font-medium text-[#003d4c]">{member.role}</p>
                   <p className="text-xs text-muted-foreground">{member.department}</p>
                   <p className="mt-2 text-xs text-muted-foreground line-clamp-2">{member.bio}</p>
+
+                  {/* Social Links Row */}
+                  <div className="mt-4 flex gap-2 pt-3 border-t border-border/40">
+                    {member.socials?.map((social) => (
+                      <a
+                        key={social.platform}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={cn(
+                          "inline-flex items-center justify-center h-8 w-8 rounded-lg text-[#003d4c] transition-colors",
+                          getSocialColor(social.platform),
+                        )}
+                        aria-label={social.platform}
+                      >
+                        {getSocialIcon(social.platform)}
+                      </a>
+                    ))}
+                  </div>
                 </button>
               ))}
             </div>
@@ -180,9 +216,28 @@ export function TeamSection() {
                   />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-primary">{selectedMember.role}</p>
+                  <p className="text-sm font-semibold text-[#003d4c]">{selectedMember.role}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{selectedMember.department}</p>
                   <p className="mt-4 leading-relaxed text-foreground">{selectedMember.bio}</p>
+
+                  {/* Social Links in Modal */}
+                  <div className="mt-4 flex gap-2">
+                    {selectedMember.socials?.map((social: any) => (
+                      <a
+                        key={social.platform}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={cn(
+                          "inline-flex items-center justify-center h-10 w-10 rounded-lg text-[#003d4c] transition-colors",
+                          getSocialColor(social.platform),
+                        )}
+                        aria-label={social.platform}
+                      >
+                        {getSocialIcon(social.platform)}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -191,7 +246,7 @@ export function TeamSection() {
                 <ul className="space-y-2">
                   {selectedMember.achievements.map((achievement: string, idx: number) => (
                     <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-primary" aria-hidden="true" />
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-[#a2be00]" aria-hidden="true" />
                       <span>{achievement}</span>
                     </li>
                   ))}

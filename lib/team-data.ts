@@ -1,5 +1,10 @@
 import { Code2, Sprout, HeartHandshake, BarChart3, Briefcase, GraduationCap } from "lucide-react"
 
+export type SocialLink = {
+  platform: "facebook" | "tiktok" | "linkedin" | "whatsapp"
+  url: string
+}
+
 export type TeamMember = {
   id: string
   name: string
@@ -8,6 +13,7 @@ export type TeamMember = {
   image: string
   bio: string
   achievements: string[]
+  socials?: SocialLink[]
 }
 
 export type TeamArea = {
@@ -32,6 +38,12 @@ export const coordinators: TeamMember[] = [
       "Publicaciones en revistas internacionales",
       "Reconocimiento de CONACYT por investigación en quinua",
     ],
+    socials: [
+      { platform: "facebook", url: "https://facebook.com" },
+      { platform: "tiktok", url: "https://tiktok.com" },
+      { platform: "linkedin", url: "https://linkedin.com" },
+      { platform: "whatsapp", url: "https://wa.me/+59164123456" },
+    ],
   },
   {
     id: "coord-2",
@@ -44,6 +56,12 @@ export const coordinators: TeamMember[] = [
       "Formadora de facilitadores comunitarios",
       "Autora del Manual de Investigación Participativa",
       "Coordinadora de 3 cohortes del proyecto",
+    ],
+    socials: [
+      { platform: "facebook", url: "https://facebook.com" },
+      { platform: "tiktok", url: "https://tiktok.com" },
+      { platform: "linkedin", url: "https://linkedin.com" },
+      { platform: "whatsapp", url: "https://wa.me/+59164234567" },
     ],
   },
 ]
@@ -69,6 +87,12 @@ export const teamAreas: TeamArea[] = [
           "Experto en React Native y desarrollo offline",
           "Mentor técnico del equipo",
         ],
+        socials: [
+          { platform: "facebook", url: "https://facebook.com" },
+          { platform: "tiktok", url: "https://tiktok.com" },
+          { platform: "linkedin", url: "https://linkedin.com" },
+          { platform: "whatsapp", url: "https://wa.me/+59164345678" },
+        ],
       },
       {
         id: "info-2",
@@ -81,6 +105,12 @@ export const teamAreas: TeamArea[] = [
           "Diseño de arquitectura de datos distribuida",
           "Implementación de sincronización offline",
           "Certificación en PostgreSQL avanzado",
+        ],
+        socials: [
+          { platform: "facebook", url: "https://facebook.com" },
+          { platform: "tiktok", url: "https://tiktok.com" },
+          { platform: "linkedin", url: "https://linkedin.com" },
+          { platform: "whatsapp", url: "https://wa.me/+59164456789" },
         ],
       },
     ],
@@ -105,6 +135,12 @@ export const teamAreas: TeamArea[] = [
           "Certificación en Agroecología",
           "Productor de semilla certificada",
         ],
+        socials: [
+          { platform: "facebook", url: "https://facebook.com" },
+          { platform: "tiktok", url: "https://tiktok.com" },
+          { platform: "linkedin", url: "https://linkedin.com" },
+          { platform: "whatsapp", url: "https://wa.me/+59164567890" },
+        ],
       },
       {
         id: "agro-2",
@@ -117,6 +153,12 @@ export const teamAreas: TeamArea[] = [
           "Capacitadora en manejo de suelos",
           "Desarrollo de protocolos de análisis",
           "Líder en levantamiento de información",
+        ],
+        socials: [
+          { platform: "facebook", url: "https://facebook.com" },
+          { platform: "tiktok", url: "https://tiktok.com" },
+          { platform: "linkedin", url: "https://linkedin.com" },
+          { platform: "whatsapp", url: "https://wa.me/+59164678901" },
         ],
       },
     ],
@@ -140,6 +182,12 @@ export const teamAreas: TeamArea[] = [
           "Formadora de líderes comunitarios",
           "Documentalista de narrativas comunitarias",
         ],
+        socials: [
+          { platform: "facebook", url: "https://facebook.com" },
+          { platform: "tiktok", url: "https://tiktok.com" },
+          { platform: "linkedin", url: "https://linkedin.com" },
+          { platform: "whatsapp", url: "https://wa.me/+59164789012" },
+        ],
       },
       {
         id: "ts-2",
@@ -152,6 +200,12 @@ export const teamAreas: TeamArea[] = [
           "Diseñador de talleres participativos",
           "Experto en comunicación intercultural",
           "Coordinador de espacios de encuentro",
+        ],
+        socials: [
+          { platform: "facebook", url: "https://facebook.com" },
+          { platform: "tiktok", url: "https://tiktok.com" },
+          { platform: "linkedin", url: "https://linkedin.com" },
+          { platform: "whatsapp", url: "https://wa.me/+59164890123" },
         ],
       },
     ],
@@ -176,6 +230,12 @@ export const teamAreas: TeamArea[] = [
           "Especialista en economía campesina",
           "Investigador de mercados locales",
         ],
+        socials: [
+          { platform: "facebook", url: "https://facebook.com" },
+          { platform: "tiktok", url: "https://tiktok.com" },
+          { platform: "linkedin", url: "https://linkedin.com" },
+          { platform: "whatsapp", url: "https://wa.me/+59164901234" },
+        ],
       },
       {
         id: "econ-2",
@@ -188,6 +248,12 @@ export const teamAreas: TeamArea[] = [
           "Diseñadora de planes de negocio",
           "Capacitadora en finanzas para productores",
           "Gestora de alianzas con instituciones financieras",
+        ],
+        socials: [
+          { platform: "facebook", url: "https://facebook.com" },
+          { platform: "tiktok", url: "https://tiktok.com" },
+          { platform: "linkedin", url: "https://linkedin.com" },
+          { platform: "whatsapp", url: "https://wa.me/+59165012345" },
         ],
       },
     ],
@@ -211,6 +277,12 @@ export const teamAreas: TeamArea[] = [
           "Coordinador de logística",
           "Especialista en reportes y evaluación",
         ],
+        socials: [
+          { platform: "facebook", url: "https://facebook.com" },
+          { platform: "tiktok", url: "https://tiktok.com" },
+          { platform: "linkedin", url: "https://linkedin.com" },
+          { platform: "whatsapp", url: "https://wa.me/+59165123456" },
+        ],
       },
       {
         id: "admin-2",
@@ -223,6 +295,12 @@ export const teamAreas: TeamArea[] = [
           "Gestora de bases de datos administrativas",
           "Coordinadora de agendas y eventos",
           "Responsable de comunicación interna",
+        ],
+        socials: [
+          { platform: "facebook", url: "https://facebook.com" },
+          { platform: "tiktok", url: "https://tiktok.com" },
+          { platform: "linkedin", url: "https://linkedin.com" },
+          { platform: "whatsapp", url: "https://wa.me/+59165234567" },
         ],
       },
     ],
@@ -246,6 +324,12 @@ export const teamAreas: TeamArea[] = [
           "Publicaciones en Desarrollo Rural",
           "Asesor técnico del modelo",
         ],
+        socials: [
+          { platform: "facebook", url: "https://facebook.com" },
+          { platform: "tiktok", url: "https://tiktok.com" },
+          { platform: "linkedin", url: "https://linkedin.com" },
+          { platform: "whatsapp", url: "https://wa.me/+59165345678" },
+        ],
       },
       {
         id: "aca-2",
@@ -258,6 +342,12 @@ export const teamAreas: TeamArea[] = [
           "Asesora de metodología participativa",
           "Investigadora en educación rural",
           "Facilitadora de aprendizajes comunitarios",
+        ],
+        socials: [
+          { platform: "facebook", url: "https://facebook.com" },
+          { platform: "tiktok", url: "https://tiktok.com" },
+          { platform: "linkedin", url: "https://linkedin.com" },
+          { platform: "whatsapp", url: "https://wa.me/+59165456789" },
         ],
       },
     ],

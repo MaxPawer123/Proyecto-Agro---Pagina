@@ -82,7 +82,12 @@ export default function ProyectoPage() {
                   </ul>
                 </div>
 
-                <div className="relative overflow-hidden rounded-2xl border border-[#003d4c]/20 shadow-lg">
+                <a
+                  href={deliverable.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative overflow-hidden rounded-2xl border border-[#003d4c]/20 shadow-lg transition-transform duration-300 hover:scale-105 cursor-pointer block"
+                >
                   <Image
                     src={deliverable.image}
                     alt={deliverable.imageAlt}
@@ -90,7 +95,7 @@ export default function ProyectoPage() {
                     height={400}
                     className="h-full w-full object-cover"
                   />
-                </div>
+                </a>
               </div>
             ))}
           </div>
@@ -134,7 +139,12 @@ export default function ProyectoPage() {
                   </ul>
                 </div>
 
-                <div className="relative overflow-hidden rounded-2xl border border-[#003d4c]/20 shadow-lg">
+                <a
+                  href={deliverable.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative overflow-hidden rounded-2xl border border-[#003d4c]/20 shadow-lg transition-transform duration-300 hover:scale-105 cursor-pointer block"
+                >
                   <Image
                     src={deliverable.image}
                     alt={deliverable.imageAlt}
@@ -142,7 +152,7 @@ export default function ProyectoPage() {
                     height={400}
                     className="h-full w-full object-cover"
                   />
-                </div>
+                </a>
               </div>
             ))}
           </div>
@@ -183,7 +193,12 @@ export default function ProyectoPage() {
                   </ul>
                 </div>
 
-                <div className="relative overflow-hidden rounded-2xl border border-[#003d4c]/20 shadow-lg">
+                <a
+                  href={deliverable.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative overflow-hidden rounded-2xl border border-[#003d4c]/20 shadow-lg transition-transform duration-300 hover:scale-105 cursor-pointer block"
+                >
                   <Image
                     src={deliverable.image}
                     alt={deliverable.imageAlt}
@@ -191,7 +206,7 @@ export default function ProyectoPage() {
                     height={400}
                     className="h-full w-full object-cover"
                   />
-                </div>
+                </a>
               </div>
             ))}
           </div>
